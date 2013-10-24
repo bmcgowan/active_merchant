@@ -166,7 +166,7 @@ module ActiveMerchant #:nodoc:
       # :comments               Uh... comments
       #
       def recurring(money, creditcard, options={})
-        requires!(options, [:periodicity, :bimonthly, :monthly, :biweekly, :weekly, :yearly, :daily], :installments, :order_id )
+        requires!(options, :periodicity, :installments, :order_id )
 
         options.update(
           :ordertype => "SALE",
